@@ -1,4 +1,4 @@
-# cbk-comms
+# CBK COMMUNICATIONS #
 
 Standalone, server-authoritative radio communications resource for public FiveM servers.
 
