@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="nui-hidden">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBK Comms</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <div id="app" class="hidden" data-shell="field">
+    <div class="device-frame">
+      <div class="device-screen">
+        <div class="screen-glass"></div>
+
+        <header class="screen-header">
+          <div class="screen-brand">
+            <div class="brand-title">CBK COMMS</div>
+            <div id="shellLabel" class="brand-subtitle">FIELD HANDSET</div>
+          </div>
+
+          <div class="screen-toolbar">
+            <div id="scaleReadout" class="tiny-readout">1.00x</div>
+            <button id="closeBtn" class="icon-button" type="button" aria-label="Close radio">&times;</button>
+          </div>
+        </header>
+
+        <div class="screen-body">
+          <section class="hud-strip">
+            <button id="powerBtn" class="hud-tile hud-button" type="button">
+              <span class="hud-label">Power</span>
+              <strong class="hud-value">ON</strong>
+            </button>
+
+            <label class="hud-tile hud-slider" for="volumeSlider">
+              <span class="hud-label">Volume</span>
+              <div class="hud-slider-row">
+                <input id="volumeSlider" type="range" min="0" max="100" step="1" />
+                <strong id="volumeValue" class="hud-value">80</strong>
+              </div>
+            </label>
+          </section>
+
+          <section class="lcd-panel active-panel">
+            <div class="panel-header">
+              <span class="panel-title">Active Channel</span>
+              <span id="selectedTier" class="panel-chip">No Access</span>
+            </div>
+            <div id="activeChannel" class="active-channel-name">Not connected</div>
+            <div id="activeMeta" class="active-channel-meta">Waiting for assignment</div>
+          </section>
+
+          <section class="lcd-panel directory-panel">
+            <div class="panel-header">
+              <span class="panel-title">Comms Directory</span>
+              <span id="departmentHint" class="panel-subtitle">Select a department</span>
+            </div>
+
+            <div id="departmentTabs" class="department-tabs" role="tablist" aria-label="Departments"></div>
+            <div id="channelList" class="channel-list"></div>
+          </section>
+
+          <section class="lcd-panel controls-panel">
+            <label class="toggle-control" for="closeOnJoinToggle">
+              <input id="closeOnJoinToggle" type="checkbox" />
+              <span>Close On Join</span>
+            </label>
+
+            <div class="control-actions">
+              <button id="leaveBtn" class="action-button action-button--primary" type="button">Leave</button>
+              <button id="sizeDownBtn" class="action-button" type="button">-</button>
+              <button id="sizeUpBtn" class="action-button" type="button">+</button>
+              <button id="resetLayoutBtn" class="action-button" type="button">Reset</button>
+            </div>
+
+            <div class="control-hint">F10 focus/close | RMB play | Caps Lock transmit</div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
